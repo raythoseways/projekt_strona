@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Piotr Słupik 3Ti">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankieta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="sticky-nav">
+        <ul class="menu-list">
+            <li><a href="index.html" class="btn">Strona Główna</a></li>
+            <li><a href="galeria.html" class="btn">Galeria</a></li>
+            <li><a href="ankieta.html" class="btn">Dołącz / Ankieta</a></li>
+        </ul>
+    </nav>
+
+    <main class="form-section main-content">
+        <h2>Ankieta dla kandydatów do ekipy</h2>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Dane podstawowe</legend>
+                <div class="form-group">
+                    <label for="name">Imię / Nick:</label>
+                    <input type="text" id="name" name="user_name" required>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Doświadczenie i sprzęt</legend>
+                <p>Jak oceniasz swoje doświadczenie?</p>
+                <input type="radio" id="nowicjusz" name="level" value="nowicjusz">
+                <label for="nowicjusz">Zaczynam przygodę</label><br>
+                <input type="radio" id="sredni" name="level" value="sredni">
+                <label for="sredni">Mam kilka obiektów na koncie</label><br>
+                <input type="radio" id="pro" name="level" value="pro">
+                <label for="pro">Wchodzę tam, gdzie inni się boją</label>
+
+                <p style="margin-top: 15px;">Co zabierasz na akcję? (zaznacz wszystkie):</p>
+                <input type="checkbox" id="latarka" name="gear" value="latarka">
+                <label for="latarka">Mocna latarka</label><br>
+                <input type="checkbox" id="maska" name="gear" value="maska">
+                <label for="maska">Maska P3 (azbest/pleśń)</label><br>
+                <input type="checkbox" id="aparat" name="gear" value="aparat">
+                <label for="aparat">Aparat / Statyw</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Twoja motywacja</legend>
+                <label for="message">Dlaczego chcesz z nami chodzić?</label><br>
+                <textarea id="message" name="user_message" rows="5"></textarea>
+            </fieldset>
+
+            <button type="submit" class="btn-submit">Wyślij zgłoszenie</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Piotr Słupik 3Ti</p>
+    </footer>
+    <script>
+        const main = document.querySelector('main');
+        const addBtn = document.querySelector('.btn-submit');
+
+        addBtn.addEventListener("click", function() {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = "Dziękujemy za zgłoszenie! Skontaktujemy się z Tobą wkrótce.";
+            main.appendChild(newParagraph);
+        });
+    </script>
+</body>
+</html>
