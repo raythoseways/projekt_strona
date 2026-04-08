@@ -55,19 +55,23 @@
 
             <button type="submit" class="btn-submit">Wyślij zgłoszenie</button>
         </form>
+
+        <div id="success-message" style="display: none; margin-top: 20px; padding: 15px; background-color: #d4edda; border: 1px solid #c3e6cb; border-radius: 4px; color: #155724;">
+            <p><strong>Dziękujemy!</strong> Twoje zgłoszenie zostało wysłane. Skontaktujemy się z Tobą wkrótce.</p>
+        </div>
     </main>
 
     <footer>
         <p>&copy; 2026 Piotr Słupik 3Ti</p>
     </footer>
     <script>
-        const main = document.querySelector('main');
-        const addBtn = document.querySelector('.btn-submit');
+        const form = document.querySelector('form');
+        const successMessage = document.getElementById('success-message');
 
-        addBtn.addEventListener("click", function() {
-            const newParagraph = document.createElement('p');
-            newParagraph.textContent = "Dziękujemy za zgłoszenie! Skontaktujemy się z Tobą wkrótce.";
-            main.appendChild(newParagraph);
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            successMessage.style.display = 'block';
+            form.reset();
         });
     </script>
 </body>
