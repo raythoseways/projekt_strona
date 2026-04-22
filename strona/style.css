@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1a1a1a;
@@ -12,10 +17,11 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    animation: fadeIn 1s ease-in;
 }
 
 header {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('header-bg.jpg');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
     height: 200px;
     display: flex;
     flex-direction: column;
